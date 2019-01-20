@@ -35,7 +35,7 @@ namespace Platformer
             SFML.Graphics.RenderWindow window = (SFML.Graphics.RenderWindow)sender; // the conversion of the sender of the event in the window class
 
             if (e.Code == SFML.Window.Keyboard.Key.Escape) // close the window if the Escape key is pressed
-                window.Close(); // close the window
+                 window.Close(); // close the window
             else
                 Input.PressedHandler(e.Code); // the transfer handler for the Pressed keys in a static class Input
         }
