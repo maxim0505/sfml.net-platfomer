@@ -10,3 +10,4 @@ C:\Users\Maxim\Documents\GitHub\sfml.net-platfomer\Platformer\Platformer\bin\Deb
 C:\Users\Maxim\Documents\GitHub\sfml.net-platfomer\Platformer\Platformer\obj\Debug\Platformer.csprojResolveAssemblyReference.cache
 C:\Users\Maxim\Documents\GitHub\sfml.net-platfomer\Platformer\Platformer\obj\Debug\Platformer.exe
 C:\Users\Maxim\Documents\GitHub\sfml.net-platfomer\Platformer\Platformer\obj\Debug\Platformer.pdb
+C:\Users\Maxim\Documents\GitHub\sfml.net-platfomer\Platformer\Platformer\bin\Debug\Resources\Logo.png
