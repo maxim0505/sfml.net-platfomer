@@ -6,11 +6,12 @@ namespace Platformer.Levels
 {
     public class Logo : interfaces.Scene
     {
-        private SFML.Graphics.Sprite SpLogo;    // the sprite for the logo
-        private SFML.Graphics.Texture TexLogo;  // the texture for the logo
-        private SFML.Graphics.Color BackColor;  // the background color for the scene
-        private bool ShowLogo;                  // if true, show the logo
-        private int progress = 0;               // the progress display of the logo
+        private SFML.Graphics.Sprite  SpLogo;    // the sprite for the logo
+        private SFML.Graphics.Texture TexLogo;   // the texture for the logo
+        private SFML.Graphics.Color SpColor;
+        private SFML.Graphics.Color   BackColor; // the background color for the scene
+        private bool ShowLogo;                   // if true, show the logo
+        private int progress = 0;                // the progress display of the logo
 
         public Logo()
         {
@@ -50,7 +51,10 @@ namespace Platformer.Levels
             else                                        // if the transparency of the logo is 255, turn off the display of the logo
                 ShowLogo = false;
 
-            SpLogo.Color = new Color(255, 255, 255, (byte)Mathf.Lerp(0, 255, progress)); // change the transparency of the logo
+            // change the transparency of the logo
+            SpColor = SpLogo.Color;
+            SpColor.A = (byte)Mathf.Lerp(0, 255, progress);
+            SpLogo.Color = SpColor;
         }
     }
 }
