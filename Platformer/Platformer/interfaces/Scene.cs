@@ -1,7 +1,7 @@
 ﻿
 namespace Platformer.interfaces
 {
-    interface Scene
+    interface Scene // interface for a scene
     {
         void Update(float delta);
         void FixedUpdate();

@@ -10,26 +10,26 @@ namespace Platformer
             new SFML.Graphics.RenderWindow(new SFML.Window.VideoMode(Constants.Screen_Width, Constants.Screen_Height), "Platformer"); // create window
             interfaces.Scene scene;
             scene = new Levels.Logo();
-            SFML.System.Clock clock = new SFML.System.Clock();
-            long Time = 0;
-            long Timefixed = 0;
+            SFML.System.Clock clock = new SFML.System.Clock(); // the time counter from the start of the game
+            long Time = 0; // the time counter for Delta
+            long Timefixed = 0; // the time counter for Fixed_Update
             window.Closed += Window_Closed;           // connecting a window close listener
             window.KeyPressed += Window_KeyPressed;   // connecting a listener to a keystroke event
             window.KeyReleased += Window_KeyReleased; // connecting a listener to a key release event
             //window.SetFramerateLimit(65);
-            window.SetVerticalSyncEnabled(true);
+            window.SetVerticalSyncEnabled(true); // enable vertical sync
 
             while (window.IsOpen) // main loop
             {
                 
-                Time = clock.ElapsedTime.AsMicroseconds();
+                Time = clock.ElapsedTime.AsMicroseconds(); // reset the time counter for Delta
                 window.DispatchEvents();  // sending window events
             
                 Update(scene, clock.ElapsedTime.AsMicroseconds() - Time); // call the Update method
-                if (clock.ElapsedTime.AsMicroseconds() - Timefixed >= Constants.Fixed_Delta)
+                if (clock.ElapsedTime.AsMicroseconds() - Timefixed >= Constants.Fixed_Delta) // if equal to or greater than the specified time
                 {
-                    FixedUpdate(scene);
-                    Timefixed = clock.ElapsedTime.AsMicroseconds();
+                    FixedUpdate(scene);  // call the Fixed_Update method
+                    Timefixed = clock.ElapsedTime.AsMicroseconds();  // reset the time counter
                 }
                 Render(scene, window);
                 System.Threading.Thread.Sleep(2); // to stop the thread of 1 millisecond, to reduce the load on the processor

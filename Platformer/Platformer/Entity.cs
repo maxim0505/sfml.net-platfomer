@@ -4,7 +4,7 @@ namespace Platformer
 {
     public class Entity
     {
-        public SFML.Graphics.RectangleShape sp = new SFML.Graphics.RectangleShape(new SFML.System.Vector2f(100, 150));
+        public SFML.Graphics.RectangleShape sp = new SFML.Graphics.RectangleShape(new SFML.System.Vector2f(100, 150)); // until the characters are ready to be just rectangles
         private SFML.System.Vector2f Position; // the position of the object
         private float Rotation;  // the rotation of the object
         private SFML.Graphics.Color FillColor = SFML.Graphics.Color.White; // the fill color of the object
@@ -40,15 +40,15 @@ namespace Platformer
             this.FillColor = FillColor;
         }
 
-        public float GetRotation() //
+        public float GetRotation() //  the method of taking the angle of rotation
         {
             return this.Rotation;
         }
-        public SFML.System.Vector2f GetPosition() //
+        public SFML.System.Vector2f GetPosition() // the method of taking the position
         {
             return this.Position;
         }
-        public SFML.Graphics.Color GetFillColor() //
+        public SFML.Graphics.Color GetFillColor() // color take method
         {
             return this.FillColor;
         }
